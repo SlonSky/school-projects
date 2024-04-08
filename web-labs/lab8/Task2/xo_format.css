@@ -1,0 +1,64 @@
+div.header{
+    border: solid 1px black;
+    border-bottom: solid 2px bisque;
+    background-color: antiquewhite;
+    height: 75px;
+    width: auto;
+    text-align: center;
+}
+div.content{
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    background-color: azure;
+    height: 500px;
+    align-content: center;
+
+}
+div.footer{
+    text-align: center;
+    border: solid 1px black;
+    border-top: solid 2px bisque;
+    height: 70px;
+    background-color: antiquewhite;
+}
+div.moveTime{
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+div.generalTime{
+
+    position: absolute;
+    top: 260px;
+    left: 200px;
+}
+div.timer{
+    font-size: xx-large;
+    color: red;
+}
+table{
+    margin: auto;
+    position: absolute;
+    top: 200px;
+    left: 580px;
+    text-align: center;
+    border: solid;
+    border-collapse: collapse;
+    border-width: 3px;
+
+}
+td{
+    width: 40px;
+    height: 40px;
+    border: solid 3px red;
+    font-size: x-large;
+}
+td:hover{
+    background-color: blue;
+}
+
+button.newGame{
+    position: absolute;
+    top: 130px;
+    left: 630px;
+}

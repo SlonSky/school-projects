@@ -1,0 +1,172 @@
+body{  background: url("../images/bg.jpg"); /* тело страницы, фон */
+   background-origin: border-box;
+
+}
+h1{ /* формат главного заголовка */
+    text-align: center;  font-family: cursive;
+    color: rgb(225, 0, 0);
+}
+h2{ /* заголовок в тексте */
+    text-align: center;  color: darkorange;
+}
+h3{ /* заголовок 3 уровня в тексте */
+    text-align: center;  color: darkred;
+}
+p{ /* формат абзаца */
+    text-align: justify;  text-indent: 5pt;
+    padding: 20px;  color: powderblue;
+}
+/* блоки с различным управлением переполнения и видимости */
+p.block1{
+    overflow: visible;
+    width: 200px;
+    height: 50px;
+    background-color: brown;
+    border: solid;
+    border-color: cornflowerblue;
+}
+p.block2{
+    overflow: auto;
+    width: 200px;
+    height: 50px;
+    color: black;
+    background-color: white;
+    border: dotted;
+    border-color: blueviolet;
+}
+p.block3{
+    overflow: hidden;
+    width: 300px;
+    height: 50px;
+    background-color: orange;
+    border: double;
+    border-color: black;
+}
+p.block4{
+    overflow: scroll;
+    width: 500px;
+    height: 50px;
+    background-color: blueviolet;
+    border: dashed;
+    border-color: blue;
+}
+p.block5{
+    overflow: auto;
+    width: 500px;
+    height: 50px;
+    background-color: bisque;
+    border: ridge;
+    border-color: burlywood;
+}
+div.text_footer{ /* блок футера */
+    text-align: center;  color: cornflowerblue;
+}
+img.title_left{ /* изображение слева заголовка */
+    width: auto;  height: 85px;
+    position: absolute;  top: 1px;  left: 10px;
+}
+img.title_right{ /* изображение справа заголовка */
+    width: auto;  height: 85px;
+    position: absolute;  top: 5px;  left: 1200px;
+}
+img.column_image{ /* изображение в колонке */
+    margin-left: 10px;  margin-top: 20px;
+    width: 250px;  height: auto;
+}
+img.in_text_left{ /* обтекание изображения слева */
+    float: left;  border: solid;
+    border-color: wheat;  margin: 8px;
+}
+img.in_text_right{ /* обтекание изображения справа */
+    float: right;  border: solid;
+    border-color: wheat;  margin: 8px;
+}
+img.collage_size{ /* изображение в коллаже */
+    position: relative;
+    border: solid;
+    border-width: 1px;
+    height: 300px;
+    width: auto;
+}
+a{ /* формат ссылки */
+    text-align: center;  text-decoration: none;
+    color: darkred;  border-bottom: dashed;
+    border-width: 1px;  border-color: darkred;
+}
+a:hover{ /* наведение курсора */
+    color: aqua;  border-bottom: dashed;
+    border-width: 1px;  border-color: aqua;
+}
+a:active{ /* активная ссылка */
+    color: goldenrod;  border-bottom: dashed;
+    border-width: 1px;  border-color: goldenrod;
+}
+a:visited{ /* посещенная ссылка */
+    color: black;  border-bottom: dashed;
+    border-width: 1px;  border-color: black;
+}
+a.left{ /* ссылка в левой колонке */
+    margin: 50px;
+}
+form{ /* формат формы */
+    margin-left: 20px;  margin-top: 20px;
+}
+label{ /* надпись */
+    padding: 3px;  width: 10em;  float: left;
+}
+input{ /* поля */
+    background-color: bisque;  border-radius: 10px;
+    width: 12em;
+}
+[type="submit"]{ /* кнопка */
+    margin: 3px;  border: groove;
+    width: 5em;  background-color: bisque;
+    border-color: coral ;
+}
+[type="submit"]:hover{ /* наведение на кнопку */
+    background-color: powderblue;
+}
+[type="submit"]:active{ /* активация кнопки */
+     background-color: cornflowerblue;
+ }
+ul{ /* список */
+    list-style-image: url("../images/marker.png");
+}
+.header{ /* класс для заголовка */
+    width: 1300px;  height: 90px;
+    position: absolute;  top: 10px;
+    left: 20px;  border: groove;
+    border-radius: 7px;  border-color: darkred;
+    background-color: darkred; background-color: rgba(0, 128, 0, 0.5);
+}
+.left_column{ /* класс для левой колонки */
+    width: 270px;  height: 500px;
+    position: absolute;  top: 150px;
+    left: 20px;  border: groove;
+    border-radius: 7px;  border-color: green;
+    background: linear-gradient(to left, rgb(239, 196, 141), rgb(115, 59, 24));
+
+}
+.right_column{ /* класс для правой колонки */
+    width: 270px;  height: 500px;
+    position: absolute;  top: 150px;
+    left: 1047px;  border: groove;
+    border-radius: 7px;  border-color: green;
+    background: linear-gradient(to right, rgb(239, 196, 141), rgb(115, 59, 24));
+
+}
+.content{ /* класс для содержимого */
+    width: 727px;  height: 800px;
+    position: absolute;  top: 110px;
+    left: 300px;  border: double;
+    border-width: 7px;  border-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+.footer{ /* класс для футера */
+    width: 738px;  height: 90px;
+    position: absolute;  top: 930px;
+    left: 300px;  border: dotted;
+    border-width: 2px;  border-color: goldenrod;
+    background-color: rgba(0, 0, 0, 0.8);
+}

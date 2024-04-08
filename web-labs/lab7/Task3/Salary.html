@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Зарплата</title>
+</head>
+<body>
+ <h1>Расчет дохода</h1>
+ <form>
+  <label>Начисленная зарплата: </label>
+  <input type="text" id="salary"><br>
+  <button id="calculate">Рассчет</button>
+  <button type="reset">Отменить</button>
+ </form>
+<script>
+    document.getElementById("calculate").onclick = function() {
+        var salary = document.getElementById("salary").value;
+        window.open("Income.html?"+salary, "_blank" );
+    };
+</script>
+</body>
+</html>

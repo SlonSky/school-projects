@@ -1,0 +1,45 @@
+Фичлист
+
+- табл 5х7
+-очистить кнопка, подтвер
+
+Matrix currentMatrix;
+Matrix resultMatrix
+Matrix W
+
++addObraz()
++checkObraz(): Matrix
+
++clear()
+
++sign(): int [-1 1]
+
+
+
+new Matrix([][])
+
++add(Matrix): Matrix
++column(int index): []
++transposed(): Matrix
++set(i, j, val)
++get(i, j): int
++toVector(): Vector
++length(): int
++height(): int
+
+new Vector ([])
+
++set(i, val)
++mult(Vector): Matrix
++multScalar(Vector): int
++toMatrix(): Matrix
++toArray(): []
+
+
+// LIKE THAT
+w = m.add(m.transposed());
+
+sign(inObraz.multScalar(W.column(randVal)))
+
+
+TODO: добавление образа в матрицу.

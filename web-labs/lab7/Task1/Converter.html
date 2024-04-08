@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <title>Конвертер валют</title>
+</head>
+<body>
+ <div class="header"><h1 class="title">Конвертер валют</h1></div>
+ <div class="content">
+  <p>Ниже представлен конвертер валют. Введите искомую сумму и выберите
+     исходную и конечную валюту.</p>
+  <form method="post">
+   <div>
+    <label class="inSum">Сумма:</label>
+    <label class="outSum">В выбранной валюте:</label>
+   </div>
+   <div>
+    <input type="text" id="input" value="" autocomplete="off" onkeyup="convert()" class="sumFrom">
+    <input type="text" id="output"  class="sumTo" readonly>
+   </div>
+   <br>
+   <div>
+    <label class="inSum">Из:</label>
+    <label class="outSum">В:</label>
+   </div>
+   <div>
+    <select class="sumFrom" id="inVal" onchange="convert()">
+        <option value="USD" selected="selected">USD - Доллар</option>
+        <option value="EUR" >EUR - Евро</option>
+        <option value="RUB" >RUB - Рубль</option>
+        <option value="GBP" >GBP - Фунт стерлингов</option>
+        <option value="CHF" >CHF - Швейцарский франк</option>
+        <option value="CAD" >CAD - Канадский доллар</option>
+        <option value="JPY" >JPY - Японская йена</option>
+        <option value="UAH" >UAH - Гривна</option>
+        <option value="PLN" >PLN - Польский злотый</option>
+        <option value="AUD" >AUD - Австралийский доллар</option>
+    </select>
+    <select class="sumTo" id="outVal" onchange="convert()">
+        <option value="USD" selected="selected">USD - Доллар</option>
+        <option value="EUR" >EUR - Евро</option>
+        <option value="RUB" >RUB - Рубль</option>
+        <option value="GBP" >GBP - Фунт стерлингов</option>
+        <option value="CHF" >CHF - Швейцарский франк</option>
+        <option value="CAD" >CAD - Канадский доллар</option>
+        <option value="JPY" >JPY - Японская йена</option>
+        <option value="UAH" >UAH - Гривна</option>
+        <option value="PLN" >PLN - Польский злотый</option>
+        <option value="AUD" >AUD - Австралийский доллар</option>
+    </select>
+   </div>
+   <div>
+    <input type="reset" value="Очистить" class="button">
+   </div>
+  </form>
+  <script src="test.js"></script>
+ </div>
+ <div class="footer">
+  <div>Александр Слонский</div>
+  <div>SlonSky&#169;</div>
+  <div>АИ-141</div>
+  <div>2015</div>
+ </div>
+</body>
+</html>

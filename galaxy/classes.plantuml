@@ -1,0 +1,294 @@
+@startuml
+top to bottom direction
+skinparam headerFontSize 30
+skinparam headerFontStyle bold
+skinparam classAttributeIconSize 0
+scale 1.0
+package com.company {
+package com.company.classes {
+interface com.company.classes.EntityA  {
+.. Methods ..
++ {abstract} getBounds() : Rectangle
++ {abstract} getX() : double
++ {abstract} getY() : double
++ {abstract} render(Graphics) : void
++ {abstract} tick() : void
+}
+interface com.company.classes.EntityB  {
+.. Methods ..
++ {abstract} getBounds() : Rectangle
++ {abstract} getX() : double
++ {abstract} getY() : double
++ {abstract} render(Graphics) : void
++ {abstract} tick() : void
+}
+
+}
+class com.company.Sound {
+.. Fields  ..
+-clip : Clip
+-isPlaying : boolean
+.. Methods ..
++isPlaying() : boolean
++play() : void
++play(boolean) : void
++stop() : void
+.. Interiors ..
+-class Listener
+}
+class com.company.Textures {
+.. Fields  ..
++enemy : BufferedImage[]
++missile : BufferedImage[]
++player : BufferedImage[]
+-ss : SpriteSheet
+.. Methods ..
+-getTextures() : void
+}
+class com.company.HelpMenu {
+.. Fields  ..
+-back : Rectangle
+-bg : BufferedImage
+.. Methods ..
++render(Graphics) : void
+}
+class com.company.GameObject {
+.. Fields  ..
++x : double
++y : double
+.. Methods ..
++getBounds(int, int) : Rectangle
+}
+class com.company.BufferedImageLoader {
+.. Fields  ..
+.. Methods ..
+.. Static ..
++ {static} loadImage() : BufferedImage
+- {static} image : BufferedImage
+}
+class com.company.SpriteSheet {
+.. Fields  ..
+-image : BufferedImage
+.. Methods ..
++grabImage(int, int, int, int) : BufferedImage
+}
+class com.company.MouseInput <<MouseListener>>  {
+.. Methods ..
++mouseClicked(MouseEvent) : void
++mouseEntered(MouseEvent) : void
++mouseExited(MouseEvent) : void
++mousePressed(MouseEvent) : void
++mouseReleased(MouseEvent) : void
+}
+class com.company.Menu {
+.. Fields  ..
++helpButton : Rectangle
++playButton : Rectangle
++quitButton : Rectangle
+.. Methods ..
++render(Graphics) : void
+}
+class com.company.Physics {
+.. Methods ..
+.. Static ..
++ {static} Collision() : boolean
++ {static} Collision() : boolean
+}
+class com.company.Player <? extends GameObject>  {
+.. Fields  ..
+~anim : Animation
+-c : Controller
+~collision : Sound
+-game : Game
+-tex : Textures
+-velX : double
+-velY : double
+.. Methods ..
++getBounds() : Rectangle
++getX() : double
++getY() : double
++render(Graphics) : void
++setVelX(double) : void
++setVelY(double) : void
++setX(double) : void
++setY(double) : void
++tick() : void
+}
+class com.company.Game <<Runnable>>  {
+.. Fields  ..
+-TITLE : String
+-background : BufferedImage
+-c : Controller
+-die : Sound
++eA : LinkedList
++eB : LinkedList
+-enemyCount : int
+-enemyKilled : int
+-gameOver : GameOver
+-helpMenu : HelpMenu
+-image : BufferedImage
+-isShooting : boolean
+-menu : Menu
+-p : Player
+-running : boolean
+-shot : Sound
+-spriteSheet : BufferedImage
+-textures : Textures
+-theme : Sound
+-thread : Thread
+.. Methods ..
++getEnemyCount() : int
++getEnemyKilled() : int
++getSpriteSheet() : BufferedImage
++init() : void
++keyPressed(KeyEvent) : void
++keyReleased(KeyEvent) : void
+-render() : void
++run() : void
++setEnemyCount(int) : void
++setEnemyKilled(int) : void
+-start() : void
+-stop() : void
+-tick() : void
+.. Static ..
++ {static} HEIGHT : int
++ {static} SCALE : int
++ {static} WIDTH : int
++ {static} health : int
++ {static} main() : void
++ {static} score : int
++ {static} state : STATE
+.. Interiors ..
++ {static} enum STATE
+}
+class com.company.Bullet <? extends GameObject>  {
+.. Fields  ..
+-anim : Animation
+-game : Game
+-tex : Textures
+.. Methods ..
++getBounds() : Rectangle
++getX() : double
++getY() : double
++render(Graphics) : void
++tick() : void
+}
+class com.company.Enemy <? extends GameObject>  {
+.. Fields  ..
+-anim : Animation
+-c : Controller
+-game : Game
+-r : Random
+-speed : int
+-tex : Textures
+.. Methods ..
++getBounds() : Rectangle
++getX() : double
++getY() : double
++render(Graphics) : void
++setX(double) : void
++setY(double) : void
++tick() : void
+}
+class com.company.Animation {
+.. Fields  ..
+-count : int
+-currentImg : BufferedImage
+-frames : int
+-img1 : BufferedImage
+-img10 : BufferedImage
+-img11 : BufferedImage
+-img12 : BufferedImage
+-img13 : BufferedImage
+-img14 : BufferedImage
+-img2 : BufferedImage
+-img3 : BufferedImage
+-img4 : BufferedImage
+-img5 : BufferedImage
+-img6 : BufferedImage
+-img7 : BufferedImage
+-img8 : BufferedImage
+-img9 : BufferedImage
+-index : int
+-speed : int
+.. Methods ..
++drawAnimation(Graphics, double, double, int) : void
++getCount() : int
++getCurrentImg() : BufferedImage
++getSpeed() : int
++nextFrame() : void
++runAnimation() : void
++setCount(int) : void
++setCurrentImg(BufferedImage) : void
++setSpeed(int) : void
+}
+class com.company.KeyInput {
+.. Fields  ..
+~game : Game
+.. Methods ..
++keyPressed(KeyEvent) : void
++keyReleased(KeyEvent) : void
+}
+class com.company.Controller {
+.. Fields  ..
+-eA : LinkedList
+-eB : LinkedList
+~entA : EntityA
+~entB : EntityB
+-game : Game
+~r : Random
+~tex : Textures
+.. Methods ..
++addEntity(EntityA) : void
++addEntity(EntityB) : void
++createEnemy(int) : void
++getEntityA() : LinkedList
++getEntityB() : LinkedList
++removeEntity(EntityB) : void
++removeEntity(EntityA) : void
++render(Graphics) : void
++tick() : void
+}
+class com.company.GameOver {
+.. Fields  ..
++buttonBack : Rectangle
++scoreInfo : Rectangle
+.. Methods ..
++render(Graphics) : void
+}
+
+}
+com.company.Textures o-- "1..1" com.company.SpriteSheet
+com.company.GameObject <|-- com.company.Player
+com.company.classes.EntityA <|.. com.company.Player
+com.company.Player o-- "1..1" com.company.Textures
+com.company.Player o-- "1..1" com.company.Controller
+com.company.Player o-- "1..1" com.company.Animation
+com.company.Player o-- "1..1" com.company.Sound
+com.company.Game o-- "1..1" com.company.Textures
+com.company.Game o-- "1..1" com.company.Menu
+com.company.Game o-- "1..1" com.company.GameOver
+com.company.Game o-- "1..1" com.company.HelpMenu
+com.company.Game *-- "0..*" com.company.classes.EntityA
+com.company.Game *-- "0..*" com.company.classes.EntityB
+com.company.GameObject <|-- com.company.Bullet
+com.company.classes.EntityA <|.. com.company.Bullet
+com.company.Bullet o-- "1..1" com.company.Textures
+com.company.Bullet o-- "1..1" com.company.Animation
+com.company.Bullet o-- "1..1" com.company.Game
+com.company.GameObject <|-- com.company.Enemy
+com.company.classes.EntityB <|.. com.company.Enemy
+com.company.Enemy o-- "1..1" com.company.Textures
+com.company.Enemy o-- "1..1" com.company.Animation
+com.company.Enemy o-- "1..1" com.company.Game
+com.company.Enemy o-- "1..1" com.company.Controller
+com.company.KeyInput o-- "1..1" com.company.Game
+com.company.Controller *-- "0..*" com.company.classes.EntityA
+com.company.Controller *-- "0..*" com.company.classes.EntityB
+com.company.Controller o-- "1..1" com.company.classes.EntityA
+com.company.Controller o-- "1..1" com.company.classes.EntityB
+com.company.Controller o-- "1..1" com.company.Textures
+com.company.Game o-- "3..3" com.company.Sound
+com.company.Player "1..1" o..o "1..1" com.company.Game
+com.company.Game "1..1" o..o "1..1" com.company.Controller
+@enduml

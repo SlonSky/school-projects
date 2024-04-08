@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Доход</title>
+</head>
+<body>
+ <h1>Результат</h1>
+ <table border="2px">
+  <tr>
+   <td>Доход</td>
+   <td>Налоги</td>
+   <td>На руки</td>
+  </tr>
+  <tr>
+   <script>
+       new function calculateIncome(){
+           var salary = document.location.href.split("?")[1];
+           document.write("<td>"+salary+"</td>");
+           document.write("<td>"+salary*0.13+"</td>");
+           document.write("<td>"+salary*0.87+"</td>");
+       };
+   </script>
+  </tr>
+ </table>
+</body>
+</html>

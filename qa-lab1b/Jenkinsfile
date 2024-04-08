@@ -1,0 +1,40 @@
+pipeline {
+  agent {
+    docker {
+      image 'python:3.6'
+    }
+
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh 'pip3 install --upgrade pip setuptools==18.5'
+        sh 'apt-get update && apt-get -y install mysql-server'
+        sh 'pip install -r config/requirements.txt'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'python3 -m unittest tests/app_mock_test.py -v'
+      }
+    }
+    stage('Coverage') {
+      steps {
+        sh '''export PYTHONPATH=$(pwd) && coverage run tests/app_mock_test.py && coverage report
+'''
+      }
+    }
+    stage('Metrics') {
+      steps {
+        sh '''radon cc .
+'''
+        sh 'radon raw . -s'
+      }
+    }
+    stage('Analysis') {
+      steps {
+        sh 'pylint AdApplication -E'
+      }
+    }
+  }
+}

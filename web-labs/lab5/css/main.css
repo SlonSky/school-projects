@@ -1,0 +1,50 @@
+
+body {
+    background-color: aliceblue; /* фоновой цвет */
+    font-size: medium; /* размер шрифта */
+    color: black;  /* цвет шрифта */
+    font-family: monospace /* семейство шрифта */
+}
+
+p {
+    text-align: justify;
+    text-indent: 5pt; /* отступ абзаца */
+    padding-left: 300px; /* отсутп от левого края */
+    padding-right: 300px; /* отсутп от правого края */
+    padding-top: 10px; /* отсутп от верхнего края */
+    padding-bottom: 5px; /* отсутп от нижнего края */
+}
+
+p:first-letter { /* псевдокласс первой буквы абзаца*/
+    font-size: large; /* размер шрифта */
+    color: red; /* цвет шрифта */
+    font-family: cursive; /* семейство шрифта */
+}
+h1 {
+    text-align: center; /* выравнивание по центру */
+}
+
+a:link { /* псевдокласс ссылки */
+    color: red; text-decoration: none; /* цвет и форматирование текста */
+}
+a:visited {  /* псевдокласс посещенной ссылки */
+    color: pink; text-decoration: none;
+}
+a:hover {  /* псевдокласс ссылки при наведенном курсоре */
+    color: goldenrod; text-decoration: underline  /* подчеркивание снизу */
+}
+a:active {  /* псевдокласс активной ссылки */
+    color: blue; text-decoration: none
+}
+
+.left_img { /* класс выравнивания изображения */
+    float: left; margin: 5px /* по левому краю, отступ - 5 пикселей */
+    width: 360px; /* размеры изображения */
+    height: 240px;
+}
+
+.right_img { /* класс выравнивания изображения */
+    float: right; margin: 5px /* по правому краю, отступ - 5 пикселей */
+    width: 180px; /* размеры изображения */
+    height: 240px;
+}

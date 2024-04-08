@@ -1,0 +1,45 @@
+pipeline {
+  agent {
+    docker {
+      image 'python:3.6'
+    }
+
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh 'pip install docker-compose'
+        sh 'pip install -r config/requirements.txt'
+        sh 'curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'python3 -m unittest tests/app_mock_test.py -v'
+        sh '''ls
+ls config
+chmod -R 777 .'''
+        sh 'docker-compose build --no-cache'
+        sh 'docker-compose up --abort-on-container-exit --exit-code-from python'
+      }
+    }
+    stage('Coverage') {
+      steps {
+        sh '''export PYTHONPATH=$(pwd) && coverage run tests/app_mock_test.py && coverage report
+'''
+      }
+    }
+    stage('Metrics') {
+      steps {
+        sh '''radon cc .
+'''
+        sh 'radon raw . -s'
+      }
+    }
+    stage('Analysis') {
+      steps {
+        sh 'pylint AdApplication -E'
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  python:
+    build:
+      context: .
+    environment:
+      - MODE=test
+    command: ["/config/wait-for-db.sh", "db", "python3", "-m", "unittest", "/lab/tests/app_test.py", "-v"]
+    depends_on:
+      - db
+      
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=test

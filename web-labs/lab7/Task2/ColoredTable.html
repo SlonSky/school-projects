@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <title>Цветная таблица</title>
+</head>
+<body>
+ <div class="header"><h1>Цветная таблица</h1></div>
+ <div class="content">
+  <table>
+   <script>
+    for(var i = 0; i < 10; i++){
+     document.write("<tr>");
+     for(var j = 0; j < 10; j++){
+      var red = Math.round(185.0*Math.random());
+      var green = Math.round(185.0*Math.random());
+      var blue = Math.round(185.0*Math.random());
+      var color = red.toString(16)+green.toString(16)+blue.toString(16);
+      document.write("<td bgcolor="+color+">"+color+"</td>");
+     }
+     document.write("</tr>");
+    }
+   </script>
+  </table>
+ </div>
+ <div class="header">
+  <div>Александр Слонский</div>
+  <div>SlonSky&#169;</div>
+  <div>AИ-141</div>
+  <div>2015</div>
+ </div>
+</body>
+</html>

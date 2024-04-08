@@ -1,0 +1,41 @@
+pipeline {
+  agent {
+    docker {
+      image 'python:3.6-alpine'
+    }
+
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh 'ls'
+        sh 'pip3 install --upgrade pip setuptools'
+        sh 'apk add --update alpine-sdk make gcc && rm -rf /var/cache/apk/*'
+        sh 'pip install -r requirements.txt'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'python3 -m unittest tests/tests.py -v'
+      }
+    }
+    stage('Coverage') {
+      steps {
+        sh '''export PYTHONPATH=$(pwd) && coverage run tests/tests.py && coverage report
+'''
+      }
+    }
+    stage('Metrics') {
+      steps {
+        sh '''radon cc .
+'''
+        sh 'radon raw . -s'
+      }
+    }
+    stage('Analysis') {
+      steps {
+        sh 'pylint app -E'
+      }
+    }
+  }
+}

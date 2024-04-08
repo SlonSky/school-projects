@@ -1,0 +1,23 @@
+table {
+	border-collapse: collapse;
+	display: inline-block;
+}
+
+td {
+	border: 1px solid black;
+	width: 20px;
+	height: 20px;
+	content: '0';
+}
+
+.setted {
+	background-color: black; 
+}
+
+.unsetted {
+	background-color: white; 	
+}
+
+#qwert {
+	display: block;
+}

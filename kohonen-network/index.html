@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="./css/style.css"></link>
+</head>
+<body>
+<div class="tables">
+	<table id="inputTable">
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+	</table>
+
+	<table id="outputTable">
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+	</table>
+</div>
+
+
+<div calss="tablesControl" id="qwert">
+	<div class="adding">
+		<input type="button" name="input" value="Add Row" onclick="addRow()">
+		<input type="button" name="input" value="Add Column" onclick="addColumn()">
+	</div>
+	<div class="removing">
+		<input type="button" name="input" value="Remove Row" onclick="removeRow()">
+		<input type="button" name="input" value="Remove Column" onclick="removeColumn()">
+	</div>
+</div>
+
+<input type="button" name="input" value="clear" onclick="clearTables()">
+
+<div class="networkControl">
+	<input type="button" name="input" value="Learn" onclick="learn()">
+	<input type="button" name="input" value="Check" onclick="check()">
+</div>
+
+
+<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="./js/tools.js"></script>
+<script type="text/javascript" src="./js/view.js"></script>
+<script type="text/javascript" src="./js/core.js"></script>
+
+</body>
+</html>

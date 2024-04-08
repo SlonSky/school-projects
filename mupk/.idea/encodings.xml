@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/ctrlAdmin.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/ctrlIndex.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/ctrlLogin.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tpl/admin/addForm.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tpl/admin/addStudentForm.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tpl/admin/editForm.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tpl/admin/newsAdmin.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tpl/admin/progressAdmin.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tpl/graduates.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tpl/regForms.php" charset="UTF-8" />
+  </component>
+</project>

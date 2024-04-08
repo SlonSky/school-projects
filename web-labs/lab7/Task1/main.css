@@ -1,0 +1,80 @@
+body{
+    background: url("background.jpg");
+}
+div.header{
+    margin-left: 10%;
+    margin-bottom: 5px;
+    width: 84%;
+    height: 10%;
+    border: outset;
+    border-width: 4px;
+    border-color: greenyellow;
+    background-color: bisque;
+    text-align: center;
+}
+div.content{
+    margin-left: 10%;
+    margin-bottom: 5px;
+    width: 80%;
+    height: auto;
+    border: groove;
+    border-color: bisque;
+    border-radius: 5px;
+    padding: 30px;
+    background: url("content_bg.jpg");
+}
+div.footer{
+    margin-left: 30%;
+    width: 40%;
+    border: dotted;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: rgba(255, 228, 196, 0.51);
+    text-align: center;
+}
+h1.title{
+    color: blue;
+    font-family: sans-serif;
+    font-style: italic;
+}
+p{
+    font-size: large;
+    color: greenyellow;
+    text-align: center;
+}
+form{
+    margin-left: 30%;
+    background-color: aliceblue;
+    width: 420px;
+    padding: 10px;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+}
+label.inSum{
+    width: 200px;
+    float: left;
+}
+label.outSum{
+    width: 200px;
+}
+.sumFrom{
+    width: 150px;
+    float: left;
+}
+.sumTo{
+    width: 150px;
+    margin-left: 50px;
+}
+.button{
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 80px;
+    border: groove;
+    border-radius: 10px;
+    border-color: aquamarine;
+}
+.button:active{
+    border-color: gold;
+}
+

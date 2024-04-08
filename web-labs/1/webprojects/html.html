@@ -1,0 +1,167 @@
+<!DOCTYPE html html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="Content-Language" content="ru"/>
+    <meta name="Author" content="SlonSky AI141"/>
+    <title>Регистрация</title>
+</head>
+<body>
+    <h1></h1>
+    <table width="80%" align="center" border="0" bgcolor="#F0FFF0">
+        <tr>
+            <th colspan="3"><h1 style="color: #FF0000">КРОВЬ КОРОЛЕЙ</h1></th>
+        </tr>
+        <tr >
+            <td width="15%" align="center"><b>Кровь королей</b> - новая игра жанра РПГ. Вам предстоит сражаться за престол в качестве Альянса,
+                            сжигать деревни и города, как Орки, накладывать проклятья, играя за Нежить, либо
+                            найти единение с природой, будучи Эльфом.</td>
+            <td width="70%"  background="images/bg.jpg">
+                <h2 align="center" style="color: beige">Регистрация</h2>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <form action="" method="post" enctype="application/x-www-form-urlencoded">
+                    <table>
+                        <tr>
+                            <td align="right"><label style="color: beige">Ваш ник:</label></td>
+                            <td><input type="text" name="nickname"/></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label style="color: beige">E-mail:</label></td>
+                            <td><input type="text" name="e-mail"/></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label style="color: beige">Страна:</label></td>
+                            <td><select name="country">
+                                <option value="country=none" selected="selected">Выберите страну</option>
+                                <option value="country=by">Беларусь</option>
+                                <option value="country=bg">Болгария</option>
+                                <option value="country=uk">Великобритария</option>
+                                <option value="country=es">Испания</option>
+                                <option value="country=kz">Казахстан</option>
+                                <option value="country=md">Молдавия</option>
+                                <option value="country=ru">Россия</option>
+                                <option value="country=ro">Румыния</option>
+                                <option value="country=us">США</option>
+                                <option value="country=ua">Украина</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label style="color: beige">Город:</label></td>
+                            <td><label style="color: beige">Киев</label><input type="radio" name="town" value="Киев"/>
+                                <label style="color: beige">Москва</label> <input type="radio" name="town" value="Москва"/>
+                                <label style="color: beige">Лондон</label> <input type="radio" name="town" value="Лондон"/>
+                                <label style="color: beige">Мадрид</label><input type="radio" name="town" value="Мадрид"/>
+                                <label style="color: beige">Минск</label><input type="radio" name="town" value="Вашингтон"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label style="color: beige">Язык:</label></td>
+                            <td><label style="color: beige">English</label><input type="checkbox" name="language" value="English"/>
+                            <label style="color: beige">Русский</label><input type="checkbox" name="language" value="Russian"/>
+                            <label style="color: beige">Українська</label><input type="checkbox" name="language" value="Ukrainian"/>
+                            <label style="color: beige">Deutsch</label><input type="checkbox" name="language" value="German"/>
+                            <label style="color: beige">Español</label><input type="checkbox" name="language" value="Spanish"/></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label style="color: beige">Сервер:</label></td>
+                            <td><select name="server">
+                                <option value="server=none" selected="selected">Выберите сервер</option>
+                                <option value="server=KingServ">KingServ</option>
+                                <option value="server=ServerUA">ServerUA</option>
+                                <option value="server=MegaServ5">MegaServ5</option>
+                                <option value="server=SpriteMan">SpriteMan</option>
+                                <option value="server=CoolServ">CoolServ</option>
+                                <option value="server=USAPlayer">USAPlayer</option>
+                                <option value="server=Орда[Server]">Орда[Server]</option>
+                                <option value="server=MainServer">MainServer</option>
+                                <option value="server=TeamMate">TeamMate</option>
+                                <option value="server=ПатріотServ">ПатріотServ</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label style="color: beige">Класс персонажа:</label></td>
+                            <td><select name="class">
+                                <option value="class=none" selected="selected">Выберите класс</option>
+                                <option value="class=Воин">Воин</option>
+                                <option value="class=Лучник">Лучник</option>
+                                <option value="class=Шпион">Шпион</option>
+                                <option value="class=Маг">Маг</option>
+                                <option value="class=Охотник">Охотник</option>
+                                <option value="class=Добытчик">Добытчик</option>
+                                <option value="class=Артиллерист">Артиллерист</option>
+                                <option value="class=Герой">Герой</option>
+                                <option value="class=Вождь">Вождь</option>
+                                <option value="class=Раб">Раб</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label style="color: beige">Раса:</label></td>
+                            <td><select name="race">
+                                <option value="race=none" selected="selected">Выберите расу</option>
+                                <option value="race=Негроид">Негроид</option>
+                                <option value="race=Азиат">Азиат</option>
+                                <option value="race=Европоид">Европоид</option>
+                                <option value="race=Монголоид">Монголоид</option>
+                                <option value="race=Орк">Орк</option>
+                                <option value="race=Черный орк">Черный орк</option>
+                                <option value="race=Нежить">Нежить</option>
+                                <option value="race=Эльф">Эльф</option>
+                                <option value="race=Одержанный эльф">Одержанный эльф</option>
+                                <option value="race=Титан">Титан</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label style="color: beige">Способности:</label></td>
+                            <td><select multiple size="3" name="abilities">
+                                <option value="abilities=none" selected="selected">Выберите способность</option>
+                                <option value="abilities=Ослепление">Ослепление</option>
+                                <option value="abilities=Берсерк">Берсерк</option>
+                                <option value="abilities=Невидимость">Невидимость</option>
+                                <option value="abilities=Одержимость">Одержимость</option>
+                                <option value="abilities=Опьянение">Опьянение</option>
+                                <option value="abilities=Заморозка">Заморозка</option>
+                                <option value="abilities=Кровожадность">Кровожадность</option>
+                                <option value="abilities=Летучесть">Летучесть</option>
+                                <option value="abilities=Ярость">Ярость</option>
+                                <option value="abilities=Оживление">Оживление</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label style="color: beige">Пароль:</label></td>
+                            <td><input type="password" name="password"/></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label style="color: beige">Дополнительная<br>информация:</label></td>
+                            <td><textarea rows="5" cols="20">Дополнения...</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td align="right"><button name="send">Отправить</button></td>
+                            <td align="center"><input type="reset" value="Очистить поля"/><td
+                        </tr>
+                    </table>
+                    <input type="hidden" name="student" value="student=Slonsky"/>
+                </form>
+            </td>
+            <td width="15%">Перейдите также: <a href="http://slonsky.hol.es/">Главная</a> </td>
+        </tr>
+    </table>
+    <table width="80%" align="center" border="0" bgcolor="#F0FFF0">
+        <tr>
+            <td>
+                <div align="center">Александр Слонский</div>
+                <div align="center">АИ-141</div>
+                <div align="center">2015</div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

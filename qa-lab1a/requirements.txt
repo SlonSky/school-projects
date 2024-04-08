@@ -1,0 +1,4 @@
+coverage==4.5.1
+radon==2.4.0
+pylint==1.9.4
+

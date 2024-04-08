@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="main.css" type="text/css" rel="stylesheet">
+    <link href="datacheck.js" rel="script">
+    <link href="perl.pl" rel="script">
+    <title>Регистрация</title>
+</head>
+<body>
+    <h1>Для регистрации необходимо указать ваши персональные данные</h1>
+    <form onsubmit="checkData(); return false;">
+     <label for="name"><span class="star">*</span>Имя</label>
+     <input type="text" id="name"><br>
+     <label for="org">Организация(компания)</label>
+     <input type="text" id="org"><br>
+     <label for="number">Телефон</label>
+     <input type="text" id="number"><br>
+     <label for="address"><span class="star">*</span>Адрес эл.почты</label>
+     <input type="text" id="address"><br>
+     <input type="submit" id="send" value="Отправить">
+     <input type="reset" value="Очистить"><br>
+    </form>
+    <span class="star">*</span>Поля обязательные для заполнения
+
+    <script>
+        function checkData(){
+            var validName, namePattern;
+            var validOrg, orgPattern;
+            var validNumber, numberPattern;
+            var validEmail, emailPattern;
+
+            namePattern = new RegExp("[A-Za-zА-Яа-я ]");
+            orgPattern = namePattern;
+            numberPattern = new RegExp("^[+](?=[1-9])");
+            emailPattern = new RegExp("^[A-Za-zА-Яа-я1-9](?=@(?=([.A-Za-zА-Яа-я1-9])))");
+
+            validName = namePattern.test(document.getElementById("name").value);
+            validOrg = orgPattern.test(document.getElementById("org").value);
+            validNumber = numberPattern.test(document.getElementById("number").value);
+            validEmail = emailPattern.test(document.getElementById("address").value);
+
+            if(!validName || !validOrg || !validNumber || !validEmail){
+                alert("Введите верные значения полей: \n" +
+                        "Имя: имя \n" +
+                        "Организация: организация\n" +
+                        "Номер: +**********\n" +
+                        "Адрес эл.почты: логин@сервер");
+            } else{
+                var isFull = document.getElementById("name").value.length*
+                        document.getElementById("address").value.length;
+                if(!isFull){
+                    alert("Заполните все обязательные поля.");
+                } else if(ans){
+                    var ans;
+                    ans = confirm("Вы уверенны, что хотите отправить введенные данные?");
+                    this.submit();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
